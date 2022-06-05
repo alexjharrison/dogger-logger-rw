@@ -4,18 +4,18 @@ export const standard = defineScenario<Prisma.WalkCreateArgs>({
   walk: {
     one: {
       data: {
-        time: 'String',
-        lengthMinutes: 2089784,
+        time: '2022-06-05T20:13:10Z',
+        lengthMinutes: 1854478,
         didPoop: true,
         didPee: true,
-        numJumps: 4658337,
-        numMouthings: 2470216,
-        dogsSeen: 5130520,
-        dogsSeenReacted: 488315,
+        numJumps: 3002614,
+        numMouthings: 8874564,
+        dogsSeen: 4310540,
+        dogsSeenReacted: 6250192,
         dog: { create: { name: 'String', gender: 'MALE' } },
         walker: {
           create: {
-            email: 'String9532717',
+            email: 'String9795612',
             firstName: 'String',
             lastName: 'String',
           },
@@ -24,18 +24,18 @@ export const standard = defineScenario<Prisma.WalkCreateArgs>({
     },
     two: {
       data: {
-        time: 'String',
-        lengthMinutes: 8296417,
+        time: '2022-06-05T20:13:10Z',
+        lengthMinutes: 1811910,
         didPoop: true,
         didPee: true,
-        numJumps: 6275169,
-        numMouthings: 4916642,
-        dogsSeen: 8767374,
-        dogsSeenReacted: 2405610,
+        numJumps: 4915563,
+        numMouthings: 2404764,
+        dogsSeen: 5207317,
+        dogsSeenReacted: 4647940,
         dog: { create: { name: 'String', gender: 'MALE' } },
         walker: {
           create: {
-            email: 'String5462',
+            email: 'String4526935',
             firstName: 'String',
             lastName: 'String',
           },

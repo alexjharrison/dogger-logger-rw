@@ -4,11 +4,18 @@ import {
   FieldError,
   Label,
   NumberField,
-  TextField,
+  DatetimeLocalField,
   CheckboxField,
+  TextField,
   Submit,
 } from '@redwoodjs/forms'
 
+
+const formatDatetime = (value) => {
+  if (value) {
+    return value.replace(/:\d{2}\.\d{3}\w/, '')
+  }
+}
 
 
 const WalkForm = (props) => {
@@ -93,23 +100,23 @@ const WalkForm = (props) => {
         <FieldError name="dogId" className="rw-field-error" />
 
         <Label
-          name="userId"
+          name="walkerId"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          User id
+          Walker id
         </Label>
         
           <NumberField
-            name="userId"
-            defaultValue={props.walk?.userId}
+            name="walkerId"
+            defaultValue={props.walk?.walkerId}
             className="rw-input"
             errorClassName="rw-input rw-input-error"
             validation={{ required: true }}
           />
         
 
-        <FieldError name="userId" className="rw-field-error" />
+        <FieldError name="walkerId" className="rw-field-error" />
 
         <Label
           name="time"
@@ -119,9 +126,9 @@ const WalkForm = (props) => {
           Time
         </Label>
         
-          <TextField
+          <DatetimeLocalField
             name="time"
-            defaultValue={props.walk?.time}
+            defaultValue={formatDatetime(props.walk?.time)}
             className="rw-input"
             errorClassName="rw-input rw-input-error"
             validation={{ required: true }}

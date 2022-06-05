@@ -77,11 +77,11 @@ const Walk = ({ walk }) => {
               <th>Dog id</th>
               <td>{walk.dogId}</td>
             </tr><tr>
-              <th>User id</th>
-              <td>{walk.userId}</td>
+              <th>Walker id</th>
+              <td>{walk.walkerId}</td>
             </tr><tr>
               <th>Time</th>
-              <td>{walk.time}</td>
+              <td>{timeTag(walk.time)}</td>
             </tr><tr>
               <th>Length minutes</th>
               <td>{walk.lengthMinutes}</td>

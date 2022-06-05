@@ -81,7 +81,7 @@ const WalksList = ({ walks }) => {
           <tr>
             <th>Id</th>
             <th>Dog id</th>
-            <th>User id</th>
+            <th>Walker id</th>
             <th>Time</th>
             <th>Length minutes</th>
             <th>Did poop</th>
@@ -105,8 +105,8 @@ const WalksList = ({ walks }) => {
             <tr key={walk.id}>
               <td>{truncate(walk.id)}</td>
               <td>{truncate(walk.dogId)}</td>
-              <td>{truncate(walk.userId)}</td>
-              <td>{truncate(walk.time)}</td>
+              <td>{truncate(walk.walkerId)}</td>
+              <td>{timeTag(walk.time)}</td>
               <td>{truncate(walk.lengthMinutes)}</td>
               <td>{checkboxInputTag(walk.didPoop)}</td>
               <td>{checkboxInputTag(walk.didPee)}</td>

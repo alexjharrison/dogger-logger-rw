@@ -24,38 +24,38 @@ describe('walks', () => {
     const result = await createWalk({
       input: {
         dogId: scenario.walk.two.dogId,
-        userId: scenario.walk.two.userId,
-        time: 'String',
-        lengthMinutes: 19098,
+        walkerId: scenario.walk.two.walkerId,
+        time: '2022-06-05T20:13:10Z',
+        lengthMinutes: 4713761,
         didPoop: true,
         didPee: true,
-        numJumps: 8977952,
-        numMouthings: 5326963,
-        dogsSeen: 7431623,
-        dogsSeenReacted: 1275447,
+        numJumps: 863305,
+        numMouthings: 6659919,
+        dogsSeen: 8266568,
+        dogsSeenReacted: 6395835,
       },
     })
 
     expect(result.dogId).toEqual(scenario.walk.two.dogId)
-    expect(result.userId).toEqual(scenario.walk.two.userId)
-    expect(result.time).toEqual('String')
-    expect(result.lengthMinutes).toEqual(19098)
+    expect(result.walkerId).toEqual(scenario.walk.two.walkerId)
+    expect(result.time).toEqual('2022-06-05T20:13:10Z')
+    expect(result.lengthMinutes).toEqual(4713761)
     expect(result.didPoop).toEqual(true)
     expect(result.didPee).toEqual(true)
-    expect(result.numJumps).toEqual(8977952)
-    expect(result.numMouthings).toEqual(5326963)
-    expect(result.dogsSeen).toEqual(7431623)
-    expect(result.dogsSeenReacted).toEqual(1275447)
+    expect(result.numJumps).toEqual(863305)
+    expect(result.numMouthings).toEqual(6659919)
+    expect(result.dogsSeen).toEqual(8266568)
+    expect(result.dogsSeenReacted).toEqual(6395835)
   })
 
   scenario('updates a walk', async (scenario: StandardScenario) => {
     const original = await walk({ id: scenario.walk.one.id })
     const result = await updateWalk({
       id: original.id,
-      input: { time: 'String2' },
+      input: { time: '2022-06-06T20:13:10Z' },
     })
 
-    expect(result.time).toEqual('String2')
+    expect(result.time).toEqual('2022-06-06T20:13:10Z')
   })
 
   scenario('deletes a walk', async (scenario: StandardScenario) => {

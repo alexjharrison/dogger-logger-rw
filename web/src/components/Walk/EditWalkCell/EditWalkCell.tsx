@@ -12,7 +12,7 @@ export const QUERY = gql`
     walk: walk(id: $id) {
       id
       dogId
-      userId
+      walkerId
       time
       lengthMinutes
       didPoop
@@ -36,7 +36,7 @@ const UPDATE_WALK_MUTATION = gql`
     updateWalk(id: $id, input: $input) {
       id
       dogId
-      userId
+      walkerId
       time
       lengthMinutes
       didPoop
@@ -74,7 +74,7 @@ export const Success = ({ walk }: CellSuccessProps<EditWalkById>) => {
   })
 
   const onSave = (input, id) => {
-    const castInput = Object.assign(input, { dogId: parseInt(input.dogId), userId: parseInt(input.userId), })
+    const castInput = Object.assign(input, { dogId: parseInt(input.dogId), walkerId: parseInt(input.walkerId), })
     updateWalk({ variables: { id, input: castInput } })
   }
 

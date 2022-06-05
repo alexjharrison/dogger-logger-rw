@@ -4,8 +4,8 @@ export const schema = gql`
     dog: Dog!
     walker: User!
     dogId: Int!
-    userId: Int!
-    time: String!
+    walkerId: Int!
+    time: DateTime!
     lengthMinutes: Int!
     didPoop: Boolean!
     didPee: Boolean!
@@ -29,8 +29,8 @@ export const schema = gql`
 
   input CreateWalkInput {
     dogId: Int!
-    userId: Int!
-    time: String!
+    walkerId: Int!
+    time: DateTime!
     lengthMinutes: Int!
     didPoop: Boolean!
     didPee: Boolean!
@@ -47,8 +47,8 @@ export const schema = gql`
 
   input UpdateWalkInput {
     dogId: Int
-    userId: Int
-    time: String
+    walkerId: Int
+    time: DateTime
     lengthMinutes: Int
     didPoop: Boolean
     didPee: Boolean

@@ -42,8 +42,8 @@ CREATE TABLE "Dog" (
 CREATE TABLE "Walk" (
     "id" SERIAL NOT NULL,
     "dogId" INTEGER NOT NULL,
-    "userId" INTEGER NOT NULL,
-    "time" TEXT NOT NULL,
+    "walkerId" INTEGER NOT NULL,
+    "time" TIMESTAMP(3) NOT NULL,
     "lengthMinutes" INTEGER NOT NULL,
     "didPoop" BOOLEAN NOT NULL,
     "didPee" BOOLEAN NOT NULL,
@@ -62,21 +62,11 @@ CREATE TABLE "Walk" (
     CONSTRAINT "Walk_pkey" PRIMARY KEY ("id")
 );
 
--- CreateTable
-CREATE TABLE "RW_DataMigration" (
-    "version" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "startedAt" TIMESTAMP(3) NOT NULL,
-    "finishedAt" TIMESTAMP(3) NOT NULL,
-
-    CONSTRAINT "RW_DataMigration_pkey" PRIMARY KEY ("version")
-);
-
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- AddForeignKey
-ALTER TABLE "Walk" ADD CONSTRAINT "Walk_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Walk" ADD CONSTRAINT "Walk_walkerId_fkey" FOREIGN KEY ("walkerId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Walk" ADD CONSTRAINT "Walk_dogId_fkey" FOREIGN KEY ("dogId") REFERENCES "Dog"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

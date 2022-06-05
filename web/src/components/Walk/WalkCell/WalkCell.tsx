@@ -8,7 +8,7 @@ export const QUERY = gql`
     walk: walk(id: $id) {
       id
       dogId
-      userId
+      walkerId
       time
       lengthMinutes
       didPoop

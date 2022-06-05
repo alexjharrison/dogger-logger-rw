@@ -23,7 +23,7 @@ const NewWalk = () => {
   })
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, { dogId: parseInt(input.dogId), userId: parseInt(input.userId), })
+    const castInput = Object.assign(input, { dogId: parseInt(input.dogId), walkerId: parseInt(input.walkerId), })
     createWalk({ variables: { input: castInput } })
   }
 

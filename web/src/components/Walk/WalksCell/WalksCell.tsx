@@ -10,7 +10,7 @@ export const QUERY = gql`
     walks {
       id
       dogId
-      userId
+      walkerId
       time
       lengthMinutes
       didPoop
