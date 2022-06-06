@@ -11,10 +11,15 @@ import { Set, Router, Route } from '@redwoodjs/router'
 import WalksLayout from 'src/layouts/WalksLayout'
 import DogsLayout from 'src/layouts/DogsLayout'
 import UsersLayout from 'src/layouts/UsersLayout'
+import DefaultLayout from 'src/layouts/DefaultLayout'
 
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={DefaultLayout}>
+        <Route path="/" page={HomePage} name="home" />
+      </Set>
+
       <Set wrap={WalksLayout}>
         <Route path="/walks/new" page={WalkNewWalkPage} name="newWalk" />
         <Route path="/walks/{id:Int}/edit" page={WalkEditWalkPage} name="editWalk" />
@@ -33,6 +38,7 @@ const Routes = () => {
         <Route path="/users/{id:Int}" page={UserUserPage} name="user" />
         <Route path="/users" page={UserUsersPage} name="users" />
       </Set>
+
       <Route notfound page={NotFoundPage} />
     </Router>
   )
