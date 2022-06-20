@@ -1,8 +1,8 @@
 import humanize from 'humanize-string'
 
+import { Link, routes, navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { Link, routes, navigate } from '@redwoodjs/router'
 
 const DELETE_DOG_MUTATION = gql`
   mutation DeleteDogMutation($id: Int!) {
@@ -66,41 +66,53 @@ const Dog = ({ dog }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Dog {dog.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Dog {dog.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{dog.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name</th>
               <td>{dog.name}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Gender</th>
               <td>{formatEnum(dog.gender)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Weight</th>
               <td>{dog.weight}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Breed</th>
               <td>{dog.breed}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Neutered</th>
               <td>{checkboxInputTag(dog.neutered)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Status</th>
               <td>{formatEnum(dog.status)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Photo url</th>
               <td>{dog.photoUrl}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Birthday</th>
               <td>{timeTag(dog.birthday)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(dog.createdAt)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Updated at</th>
               <td>{timeTag(dog.updatedAt)}</td>
             </tr>

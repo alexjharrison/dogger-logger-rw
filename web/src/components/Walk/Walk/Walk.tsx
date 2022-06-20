@@ -1,8 +1,8 @@
 import humanize from 'humanize-string'
 
+import { Link, routes, navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { Link, routes, navigate } from '@redwoodjs/router'
 
 const DELETE_WALK_MUTATION = gql`
   mutation DeleteWalkMutation($id: Int!) {
@@ -66,62 +66,81 @@ const Walk = ({ walk }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Walk {walk.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Walk {walk.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{walk.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Dog id</th>
               <td>{walk.dogId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Walker id</th>
               <td>{walk.walkerId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Time</th>
               <td>{timeTag(walk.time)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Length minutes</th>
               <td>{walk.lengthMinutes}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Did poop</th>
               <td>{checkboxInputTag(walk.didPoop)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Did pee</th>
               <td>{checkboxInputTag(walk.didPee)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Medical concerns</th>
               <td>{walk.medicalConcerns}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Num jumps</th>
               <td>{walk.numJumps}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Jump handlage</th>
               <td>{walk.jumpHandlage}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Num mouthings</th>
               <td>{walk.numMouthings}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Mouthings handlage</th>
               <td>{walk.mouthingsHandlage}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Dogs seen</th>
               <td>{walk.dogsSeen}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Dogs seen reacted</th>
               <td>{walk.dogsSeenReacted}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Seen dog reaction</th>
               <td>{walk.seenDogReaction}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Other concerns</th>
               <td>{walk.otherConcerns}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(walk.createdAt)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Updated at</th>
               <td>{timeTag(walk.updatedAt)}</td>
             </tr>

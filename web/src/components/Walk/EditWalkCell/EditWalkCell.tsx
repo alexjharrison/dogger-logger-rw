@@ -1,9 +1,9 @@
 import type { EditWalkById } from 'types/graphql'
 
+import { navigate, routes } from '@redwoodjs/router'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { navigate, routes } from '@redwoodjs/router'
 
 import WalkForm from 'src/components/Walk/WalkForm'
 
@@ -74,7 +74,10 @@ export const Success = ({ walk }: CellSuccessProps<EditWalkById>) => {
   })
 
   const onSave = (input, id) => {
-    const castInput = Object.assign(input, { dogId: parseInt(input.dogId), walkerId: parseInt(input.walkerId), })
+    const castInput = Object.assign(input, {
+      dogId: parseInt(input.dogId),
+      walkerId: parseInt(input.walkerId),
+    })
     updateWalk({ variables: { id, input: castInput } })
   }
 

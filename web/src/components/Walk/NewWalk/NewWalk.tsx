@@ -1,6 +1,7 @@
+import { navigate, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { navigate, routes } from '@redwoodjs/router'
+
 import WalkForm from 'src/components/Walk/WalkForm'
 
 const CREATE_WALK_MUTATION = gql`
@@ -23,7 +24,10 @@ const NewWalk = () => {
   })
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, { dogId: parseInt(input.dogId), walkerId: parseInt(input.walkerId), })
+    const castInput = Object.assign(input, {
+      dogId: parseInt(input.dogId),
+      walkerId: parseInt(input.walkerId),
+    })
     createWalk({ variables: { input: castInput } })
   }
 

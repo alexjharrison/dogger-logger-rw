@@ -1,9 +1,10 @@
-import { db } from 'src/lib/db'
 import type {
   QueryResolvers,
   MutationResolvers,
   DogResolvers,
 } from 'types/graphql'
+
+import { db } from 'src/lib/db'
 
 export const dogs: QueryResolvers['dogs'] = () => {
   return db.dog.findMany()
@@ -15,7 +16,17 @@ export const dog: QueryResolvers['dog'] = ({ id }) => {
   })
 }
 
-export const createDog: MutationResolvers['createDog'] = ({ input }) => {
+export const createDog: MutationResolvers['createDog'] = async ({ input }) => {
+  let conflicts = 1
+  let newSlug = input.name
+  while (!input.slug) {
+    const count = await db.dog.count({ where: { slug: { equals: newSlug } } })
+    if (count > 0) {
+      newSlug = input.name + ++conflicts
+    } else {
+      input.slug = newSlug
+    }
+  }
   return db.dog.create({
     data: input,
   })

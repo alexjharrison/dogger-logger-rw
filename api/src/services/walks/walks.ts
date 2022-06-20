@@ -1,9 +1,10 @@
-import { db } from 'src/lib/db'
 import type {
   QueryResolvers,
   MutationResolvers,
   WalkResolvers,
 } from 'types/graphql'
+
+import { db } from 'src/lib/db'
 
 export const walks: QueryResolvers['walks'] = () => {
   return db.walk.findMany()

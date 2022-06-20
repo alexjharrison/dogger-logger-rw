@@ -1,7 +1,7 @@
 import type { FindDogs } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import { Link, routes } from '@redwoodjs/router'
+import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Dogs from 'src/components/Dog/Dogs'
 
@@ -29,10 +29,7 @@ export const Empty = () => {
   return (
     <div className="rw-text-center">
       {'No dogs yet. '}
-      <Link
-        to={routes.newDog()}
-        className="rw-link"
-      >
+      <Link to={routes.newDog()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>

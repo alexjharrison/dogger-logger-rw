@@ -1,7 +1,7 @@
 import type { FindWalks } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import { Link, routes } from '@redwoodjs/router'
+import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Walks from 'src/components/Walk/Walks'
 
@@ -36,10 +36,7 @@ export const Empty = () => {
   return (
     <div className="rw-text-center">
       {'No walks yet. '}
-      <Link
-        to={routes.newWalk()}
-        className="rw-link"
-      >
+      <Link to={routes.newWalk()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>

@@ -1,4 +1,5 @@
 import type { FindWalkById } from 'types/graphql'
+
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Walk from 'src/components/Walk/Walk'

@@ -10,63 +10,14 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
 const formatDatetime = (value) => {
   if (value) {
     return value.replace(/:\d{2}\.\d{3}\w/, '')
   }
 }
 
-
 const WalkForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.walk?.id)
   }
 
@@ -79,7 +30,7 @@ const WalkForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="dogId"
           className="rw-label"
@@ -87,15 +38,14 @@ const WalkForm = (props) => {
         >
           Dog id
         </Label>
-        
-          <NumberField
-            name="dogId"
-            defaultValue={props.walk?.dogId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="dogId"
+          defaultValue={props.walk?.dogId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="dogId" className="rw-field-error" />
 
@@ -106,15 +56,14 @@ const WalkForm = (props) => {
         >
           Walker id
         </Label>
-        
-          <NumberField
-            name="walkerId"
-            defaultValue={props.walk?.walkerId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="walkerId"
+          defaultValue={props.walk?.walkerId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="walkerId" className="rw-field-error" />
 
@@ -125,15 +74,14 @@ const WalkForm = (props) => {
         >
           Time
         </Label>
-        
-          <DatetimeLocalField
-            name="time"
-            defaultValue={formatDatetime(props.walk?.time)}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <DatetimeLocalField
+          name="time"
+          defaultValue={formatDatetime(props.walk?.time)}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="time" className="rw-field-error" />
 
@@ -144,15 +92,14 @@ const WalkForm = (props) => {
         >
           Length minutes
         </Label>
-        
-          <NumberField
-            name="lengthMinutes"
-            defaultValue={props.walk?.lengthMinutes}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="lengthMinutes"
+          defaultValue={props.walk?.lengthMinutes}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="lengthMinutes" className="rw-field-error" />
 
@@ -163,14 +110,13 @@ const WalkForm = (props) => {
         >
           Did poop
         </Label>
-        
-          <CheckboxField
-            name="didPoop"
-            defaultChecked={props.walk?.didPoop}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <CheckboxField
+          name="didPoop"
+          defaultChecked={props.walk?.didPoop}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="didPoop" className="rw-field-error" />
 
@@ -181,14 +127,13 @@ const WalkForm = (props) => {
         >
           Did pee
         </Label>
-        
-          <CheckboxField
-            name="didPee"
-            defaultChecked={props.walk?.didPee}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <CheckboxField
+          name="didPee"
+          defaultChecked={props.walk?.didPee}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="didPee" className="rw-field-error" />
 
@@ -199,14 +144,13 @@ const WalkForm = (props) => {
         >
           Medical concerns
         </Label>
-        
-          <TextField
-            name="medicalConcerns"
-            defaultValue={props.walk?.medicalConcerns}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <TextField
+          name="medicalConcerns"
+          defaultValue={props.walk?.medicalConcerns}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="medicalConcerns" className="rw-field-error" />
 
@@ -217,15 +161,14 @@ const WalkForm = (props) => {
         >
           Num jumps
         </Label>
-        
-          <NumberField
-            name="numJumps"
-            defaultValue={props.walk?.numJumps}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="numJumps"
+          defaultValue={props.walk?.numJumps}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="numJumps" className="rw-field-error" />
 
@@ -236,14 +179,13 @@ const WalkForm = (props) => {
         >
           Jump handlage
         </Label>
-        
-          <TextField
-            name="jumpHandlage"
-            defaultValue={props.walk?.jumpHandlage}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <TextField
+          name="jumpHandlage"
+          defaultValue={props.walk?.jumpHandlage}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="jumpHandlage" className="rw-field-error" />
 
@@ -254,15 +196,14 @@ const WalkForm = (props) => {
         >
           Num mouthings
         </Label>
-        
-          <NumberField
-            name="numMouthings"
-            defaultValue={props.walk?.numMouthings}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="numMouthings"
+          defaultValue={props.walk?.numMouthings}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="numMouthings" className="rw-field-error" />
 
@@ -273,14 +214,13 @@ const WalkForm = (props) => {
         >
           Mouthings handlage
         </Label>
-        
-          <TextField
-            name="mouthingsHandlage"
-            defaultValue={props.walk?.mouthingsHandlage}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <TextField
+          name="mouthingsHandlage"
+          defaultValue={props.walk?.mouthingsHandlage}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="mouthingsHandlage" className="rw-field-error" />
 
@@ -291,15 +231,14 @@ const WalkForm = (props) => {
         >
           Dogs seen
         </Label>
-        
-          <NumberField
-            name="dogsSeen"
-            defaultValue={props.walk?.dogsSeen}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="dogsSeen"
+          defaultValue={props.walk?.dogsSeen}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="dogsSeen" className="rw-field-error" />
 
@@ -310,15 +249,14 @@ const WalkForm = (props) => {
         >
           Dogs seen reacted
         </Label>
-        
-          <NumberField
-            name="dogsSeenReacted"
-            defaultValue={props.walk?.dogsSeenReacted}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="dogsSeenReacted"
+          defaultValue={props.walk?.dogsSeenReacted}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="dogsSeenReacted" className="rw-field-error" />
 
@@ -329,14 +267,13 @@ const WalkForm = (props) => {
         >
           Seen dog reaction
         </Label>
-        
-          <TextField
-            name="seenDogReaction"
-            defaultValue={props.walk?.seenDogReaction}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <TextField
+          name="seenDogReaction"
+          defaultValue={props.walk?.seenDogReaction}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="seenDogReaction" className="rw-field-error" />
 
@@ -347,22 +284,18 @@ const WalkForm = (props) => {
         >
           Other concerns
         </Label>
-        
-          <TextField
-            name="otherConcerns"
-            defaultValue={props.walk?.otherConcerns}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <TextField
+          name="otherConcerns"
+          defaultValue={props.walk?.otherConcerns}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="otherConcerns" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

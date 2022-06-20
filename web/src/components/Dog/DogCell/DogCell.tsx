@@ -1,4 +1,5 @@
 import type { FindDogById } from 'types/graphql'
+
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Dog from 'src/components/Dog/Dog'
